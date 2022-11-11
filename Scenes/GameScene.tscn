@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0g2qjtctgifr"]
+
+[ext_resource type="PackedScene" uid="uid://dwgvx8n85odac" path="res://Sprites/GameScene/Player.tscn" id="1_8vhdn"]
+[ext_resource type="Script" path="res://Scripts/GameScene/GameScene.cs" id="1_odera"]
+
+[node name="GameScene" type="Node3D"]
+script = ExtResource("1_odera")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(10, 1, 100)
+
+[node name="Player" parent="." instance=ExtResource("1_8vhdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.94795, 0)
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -30, 0, 0)
+fov = 90.0
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 65.656, 0)
+light_energy = 2.0
+light_indirect_energy = 2.0
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_max_distance = 1000.0
